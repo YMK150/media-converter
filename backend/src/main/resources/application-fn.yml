@@ -3,7 +3,7 @@ media:
     ffmpeg-path: ${TRIM_APPDEST}/server/ffmpeg/bin/ffmpeg
     ffprobe-path: ${TRIM_APPDEST}/server/ffmpeg/bin/ffprobe
 server:
-  port: ${TRIM_SERVICE_PORT}
+  port: ${wizard_app_port}
 file:
   browser:
     base-path: ${TRIM_DATA_ACCESSIBLE_PATHS}

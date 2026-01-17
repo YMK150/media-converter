@@ -66,7 +66,8 @@ public class BannerUtil {
         appendEnvVar(banner, envVars, "TRIM_APPVER", "应用版本");
         appendEnvVar(banner, envVars, "TRIM_OLD_APPVER", "升级前版本");
         appendEnvVar(banner, envVars, "TRIM_SERVICE_PORT", "服务端口");
-        
+        appendEnvVar(banner, envVars, "wizard_app_port", "用户定义服务端口");
+
         banner.append("================= 路径信息 =================\n");
 
         appendEnvVar(banner, envVars, "TRIM_APPDEST", "可执行文件目录");
