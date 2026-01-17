@@ -1,0 +1,30 @@
+media:
+  converter:
+    ffmpeg-path: ffmpeg
+    ffprobe-path: ffprobe
+file:
+  browser:
+    base-path: /mnt/d:/mnt/e:/
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:sqlite:media_converter.db?journal_mode=WAL&synchronous=NORMAL&busy_timeout=30000
+    driver-class-name: org.sqlite.JDBC
+    username: media_converter
+    password: media_converter_1122
+    hikari:
+      maximum-pool-size: 2
+      minimum-idle: 1
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 1800000
+
+# 日志配置
+logging:
+  config: classpath:logback-spring.xml
+  file:
+    path: ./logs
+  level:
+    com.mediaconverter: DEBUG
+    org.springframework.web: INFO

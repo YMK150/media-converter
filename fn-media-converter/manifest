@@ -1,0 +1,11 @@
+appname               = fn-media-converter
+version               = 0.0.1
+display_name          = 格式转换器
+desc                  = 支持在飞牛NAS系统中进行视频、音频格式转换
+arch                  = x86_64
+source                = thirdparty
+maintainer            = yinmk
+distributor           = yinmk
+desktop_uidir         = ui
+desktop_applaunchname = fn-media-converter.Application
+install_dep_apps      = java-17-openjdk

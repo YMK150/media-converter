@@ -1,0 +1,53 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: media-converter
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    
+  servlet:
+    multipart:
+      max-file-size: 2GB
+      max-request-size: 2GB
+  
+  # 静态资源配置
+  web:
+    resources:
+      static-locations: classpath:/static/
+      cache:
+        period: 0  # 开发时不缓存，生产环境可以设置更长时间
+
+# 自定义配置
+media:
+  converter:
+    # ffmpeg路径
+    ffmpeg-path: ${TRIM_APPDEST}/ffmpeg
+    # 最大并发转换任务数  在sqllite下设置1即可，否则可能导致状态更新死锁
+    max-concurrent-tasks: 1
+    # 支持的音频格式
+    supported-audio-formats: mp3,wav,aac,flac,ogg,m4a,wma
+    # 支持的视频格式
+    supported-video-formats: mp4,avi,mov,wmv,flv,mkv,webm,3gp,m4v
+
+# JWT配置
+jwt:
+  # JWT密钥（生产环境请使用更复杂的密钥，至少32字节）
+  secret: media-converter-secret-key-for-jwt-token-generation-please-change-in-production-environment
+  # JWT过期时间（单位：毫秒），默认24小时
+  expiration: 86400000
+
+# 日志配置
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com.mediaconverter: INFO
+    org.springframework.web: INFO

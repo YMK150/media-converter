@@ -1,0 +1,294 @@
+/* 全局样式 */
+:root {
+  --primary-color: #409eff;
+  --success-color: #67c23a;
+  --warning-color: #e6a23c;
+  --danger-color: #f56c6c;
+  --info-color: #909399;
+  
+  --text-primary: #303133;
+  --text-regular: #606266;
+  --text-secondary: #909399;
+  --text-placeholder: #c0c4cc;
+  
+  --border-light: #ebeef5;
+  --border-lighter: #f2f6fc;
+  --background-base: #f5f7fa;
+}
+
+/* 移动端适配 */
+.mobile {
+  font-size: 14px;
+}
+
+.mobile .el-card {
+  margin: 8px;
+}
+
+.mobile .el-button {
+  padding: 12px 20px;
+}
+
+.mobile .el-table {
+  font-size: 12px;
+}
+
+.mobile .file-list {
+  padding: 8px;
+}
+
+.desktop {
+  font-size: 14px;
+}
+
+/* 响应式布局 */
+.responsive-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.mobile .responsive-container {
+  padding: 10px;
+}
+
+/* 卡片样式 */
+.media-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.mobile .media-card {
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* 文件列表样式 */
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color 0.3s;
+}
+
+.file-item:hover {
+  background-color: var(--border-lighter);
+}
+
+.file-item.selected {
+  background-color: #ecf5ff;
+  border-left: 4px solid var(--primary-color);
+}
+
+.file-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  color: var(--text-secondary);
+}
+
+.file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-name {
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.file-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* 转换进度样式 */
+.progress-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.task-item {
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px 0;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.task-title {
+  font-weight: 500;
+  color: var(--text-primary);
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.status-pending {
+  background-color: #f4f4f5;
+  color: var(--text-regular);
+}
+
+.status-running {
+  background-color: #ecf5ff;
+  color: var(--primary-color);
+}
+
+.status-completed {
+  background-color: #f0f9ff;
+  color: var(--success-color);
+}
+
+.status-failed {
+  background-color: #fef0f0;
+  color: var(--danger-color);
+}
+
+/* 响应式表格 */
+@media (max-width: 768px) {
+  .el-table {
+    font-size: 12px;
+  }
+  
+  .el-table .cell {
+    padding: 8px 4px;
+  }
+  
+  .el-button--small {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* 动画效果 */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 自定义滚动条 */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 反馈按钮样式 */
+.feedback-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.mobile .feedback-button {
+  bottom: 15px;
+  right: 15px;
+}
+
+.feedback-button .el-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 24px;
+}
+
+.mobile .feedback-button .el-button {
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+}
+
+/* 对话框移动端适配 */
+.mobile .el-dialog {
+  width: 95% !important;
+  margin: 5vh auto !important;
+}
+
+.mobile .el-dialog__body {
+  padding: 15px !important;
+}
+
+/* 表单移动端适配 */
+.mobile .el-form-item {
+  margin-bottom: 15px;
+}
+
+.mobile .el-select {
+  width: 100%;
+}
+
+/* 空状态样式 */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+}
+
+.empty-state .empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.empty-state .empty-text {
+  font-size: 16px;
+  line-height: 1.6;
+}

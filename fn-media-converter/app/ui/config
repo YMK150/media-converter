@@ -1,0 +1,13 @@
+{
+    ".url": {
+        "fn-media-converter.Application": {
+            "title": "格式转换器",
+            "icon": "images/icon_{0}.png",
+            "type": "url",
+            "protocol": "",
+            "port": "8080",
+            "url": "/",
+            "allUsers": false
+        }
+    }
+}
