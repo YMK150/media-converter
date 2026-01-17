@@ -6,7 +6,7 @@ file:
   browser:
     base-path: /mnt/d:/mnt/e:/
 server:
-  port: 8080
+  port: 9080
 spring:
   datasource:
     url: jdbc:sqlite:media_converter.db?journal_mode=WAL&synchronous=NORMAL&busy_timeout=30000
